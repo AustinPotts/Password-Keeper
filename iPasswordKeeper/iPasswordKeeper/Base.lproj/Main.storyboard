@@ -3,6 +3,136 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--My Passwords-->
+        <scene sceneID="VhU-Ga-3Ky">
+            <objects>
+                <tableViewController id="JHy-hH-0eb" customClass="PasswordListTableViewController" customModule="iPasswordKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="n63-I6-TMT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="v12-cR-AEH">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v12-cR-AEH" id="bZq-bR-pgb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Sxp-oi-OsU" kind="show" identifier="ViewPasswordSegue" id="Wv5-qd-2PD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JHy-hH-0eb" id="nDf-uh-HRR"/>
+                            <outlet property="delegate" destination="JHy-hH-0eb" id="NoK-h8-bBB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Passwords" id="H6k-Br-EIB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zMR-FU-ijc">
+                            <connections>
+                                <segue destination="Sxp-oi-OsU" kind="show" identifier="AddPasswordSegue" id="aYy-pJ-79J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BTA-dB-bXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878.26086956521749" y="12.723214285714285"/>
+        </scene>
+        <!--Password Add View Controller-->
+        <scene sceneID="t6A-Dp-LqT">
+            <objects>
+                <viewController id="Sxp-oi-OsU" customClass="PasswordAddViewController" customModule="iPasswordKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2sN-U9-syG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gy-Rf-0R2">
+                                <rect key="frame" x="20" y="138" width="374" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                <color key="textColor" red="0.92483610279999995" green="0.92483610279999995" blue="0.92483610279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pem-4S-GZU">
+                                <rect key="frame" x="20" y="288" width="374" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-hO-v2p">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                        <color key="textColor" red="0.92483610279999995" green="0.92483610279999995" blue="0.92483610279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter The Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JyO-To-fPR">
+                                <rect key="frame" x="20" y="188" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INE-bW-Hjt">
+                                <rect key="frame" x="20" y="338" width="374" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="524" id="gh0-Ql-kZA"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31811133190000002" green="0.40088902320000003" blue="0.53543918339999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JyO-To-fPR" firstAttribute="leading" secondItem="QYG-Sh-Df9" secondAttribute="leading" constant="20" id="0ad-ab-RbA"/>
+                            <constraint firstItem="INE-bW-Hjt" firstAttribute="leading" secondItem="QYG-Sh-Df9" secondAttribute="leading" constant="20" id="2Iq-cc-zuM"/>
+                            <constraint firstItem="QYG-Sh-Df9" firstAttribute="trailing" secondItem="Pem-4S-GZU" secondAttribute="trailing" constant="20" id="5jR-ab-mGR"/>
+                            <constraint firstItem="QYG-Sh-Df9" firstAttribute="trailing" secondItem="7gy-Rf-0R2" secondAttribute="trailing" constant="20" id="7wL-us-zAP"/>
+                            <constraint firstItem="7gy-Rf-0R2" firstAttribute="leading" secondItem="QYG-Sh-Df9" secondAttribute="leading" constant="20" id="BSN-2a-IiF"/>
+                            <constraint firstItem="QYG-Sh-Df9" firstAttribute="trailing" secondItem="INE-bW-Hjt" secondAttribute="trailing" constant="20" id="GVn-Gh-Esb"/>
+                            <constraint firstItem="Pem-4S-GZU" firstAttribute="leading" secondItem="QYG-Sh-Df9" secondAttribute="leading" constant="20" id="IIp-J0-Cus"/>
+                            <constraint firstItem="INE-bW-Hjt" firstAttribute="top" secondItem="Pem-4S-GZU" secondAttribute="bottom" constant="8" id="Ibi-CP-Cq6"/>
+                            <constraint firstItem="Pem-4S-GZU" firstAttribute="top" secondItem="JyO-To-fPR" secondAttribute="bottom" constant="66" id="Y32-Kk-KYy"/>
+                            <constraint firstItem="7gy-Rf-0R2" firstAttribute="top" secondItem="QYG-Sh-Df9" secondAttribute="top" constant="50" id="Yha-Hi-eUc"/>
+                            <constraint firstItem="QYG-Sh-Df9" firstAttribute="trailing" secondItem="JyO-To-fPR" secondAttribute="trailing" constant="20" id="eVu-mT-zfX"/>
+                            <constraint firstItem="INE-bW-Hjt" firstAttribute="bottom" secondItem="QYG-Sh-Df9" secondAttribute="bottom" id="ec3-d5-yEL"/>
+                            <constraint firstItem="JyO-To-fPR" firstAttribute="top" secondItem="7gy-Rf-0R2" secondAttribute="bottom" constant="8" id="u7C-cx-G3a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QYG-Sh-Df9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dAg-aF-k97"/>
+                    <connections>
+                        <outlet property="passwordTextView" destination="INE-bW-Hjt" id="EmU-rA-XCk"/>
+                        <outlet property="websiteTextField" destination="JyO-To-fPR" id="jI7-1W-b2g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="88R-r0-CRn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700.0000000000002" y="12.723214285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0iz-nC-xmr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eng-be-QF4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lPN-sf-3qR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JHy-hH-0eb" kind="relationship" relationship="rootViewController" id="RL5-iO-Hls"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDf-FA-JYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31.884057971014496" y="12.723214285714285"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wv5-qd-2PD"/>
+    </inferredMetricsTieBreakers>
 </document>

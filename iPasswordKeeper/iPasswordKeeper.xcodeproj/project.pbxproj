@@ -12,6 +12,8 @@
 		451D302E2389DF2D0032C3F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451D302C2389DF2D0032C3F4 /* Main.storyboard */; };
 		451D30302389DF300032C3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451D302F2389DF300032C3F4 /* Assets.xcassets */; };
 		451D30332389DF300032C3F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451D30312389DF300032C3F4 /* LaunchScreen.storyboard */; };
+		45847CAD2389E7DD00AA3057 /* PasswordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45847CAC2389E7DC00AA3057 /* PasswordListTableViewController.swift */; };
+		459161F6238A0E14003D9FB4 /* PasswordAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459161F5238A0E14003D9FB4 /* PasswordAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		451D302F2389DF300032C3F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		451D30322389DF300032C3F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		451D30342389DF300032C3F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45847CAC2389E7DC00AA3057 /* PasswordListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordListTableViewController.swift; sourceTree = "<group>"; };
+		459161F5238A0E14003D9FB4 /* PasswordAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordAddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		451D303B2389DF4E0032C3F4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				459161F5238A0E14003D9FB4 /* PasswordAddViewController.swift */,
+				45847CAC2389E7DC00AA3057 /* PasswordListTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				451D30272389DF2D0032C3F4 /* AppDelegate.swift in Sources */,
+				459161F6238A0E14003D9FB4 /* PasswordAddViewController.swift in Sources */,
 				451D30292389DF2D0032C3F4 /* SceneDelegate.swift in Sources */,
+				45847CAD2389E7DD00AA3057 /* PasswordListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
